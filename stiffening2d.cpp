@@ -23,7 +23,8 @@ int main(int argc, char **argv)
     constexpr int bfgs_maxiter = 30000; // max number of inner iterations
     constexpr int outer_maxiter = 3000; // max number of outer iterations
     constexpr double bfgs_threshold = 1e-8;
-    constexpr double outer_threshold = 1e-3;
+    // constexpr double outer_threshold = 1e-3;
+    constexpr double outer_threshold = 1e-4;
     constexpr bool lock_boundary = false;
     // const std::string res_filename = "result.obj";
 
@@ -177,7 +178,7 @@ int main(int argc, char **argv)
     ofp += ifp.stem();
     ofp += fs::path("_qis");
     ofp += ifp.extension();
-    ofp = ifp.parent_path() / ofp;
+    // ofp = ifp.parent_path() / ofp;
     std::string res_filename = ofp.generic_string();
     std::cout << "writing file: " << res_filename << std::endl;
 
