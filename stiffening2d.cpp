@@ -23,7 +23,7 @@ int main(int argc, char **argv)
     constexpr int bfgs_maxiter = 30000; // max number of inner iterations
     constexpr int outer_maxiter = 3000; // max number of outer iterations
     constexpr double bfgs_threshold = 1e-8;
-    constexpr double outer_threshold = 1e-4;
+    constexpr double outer_threshold = 1e-3;
     constexpr bool lock_boundary = false;
     // const std::string res_filename = "result.obj";
 
@@ -172,10 +172,14 @@ int main(int argc, char **argv)
     for (int v : vert_iter(m))
         tex_coord[v] = {X[2 * v + 0], X[2 * v + 1]};
 
-    fs::path fp = fs::path(argv[1]);
-    fs::path fpo = fp.parent_path() / fp.stem() + fs::path("_qis") / fp.extension();
-    std::string res_filename = fpo.generic_string();
-    std::cout << "filename: " << res_filename << std::endl;
+    fs::path ifp = fs::path(argv[1]);
+    fs::path ofp;
+    ofp += ifp.stem();
+    ofp += fs::path("_qis");
+    ofp += ifp.extension();
+    ofp = ifp.parent_path() / ofp;
+    std::string res_filename = ofp.generic_string();
+    std::cout << "writing file: " << res_filename << std::endl;
 
     write_by_extension(res_filename, m, SurfaceAttributes{{{"tex_coord", tex_coord.ptr}, {"selection", lock.ptr}}, {}, {}});
     return 0;
