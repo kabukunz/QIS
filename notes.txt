@@ -1,0 +1,8 @@
+Notes
+
+
+Usa GCC per compilare su Mac
+Legge la UV, solo un oggetto singolo, non una scena
+Se la UV manca, l'output è inesistente ma viene comunque prodotto
+Solo tris, no quads
+
