@@ -24,3 +24,12 @@ MSVC compiler is stuck with OpenMP version 2.0, and unfortunately for you, reduc
 
 So you can either change of compiler, or doing the reduction operation the old way with some private variables and a final reduction with critical accumulations
 
+https://stackoverflow.com/questions/77512991/openmp-declare-reduction-clause-not-working-in-visual-studio
+
+Complicated reductions in OMP/C++ are very compiler dependent. You may need to try more than one compiler, and not the one in Visual Studio. 2. The "declare reduction" is not the most elegant solution: better to define operator+ on maps. You may need to write a minimal class around std::map. 3. I don't share @JérômeRichard 's concern about bandwidth since there are far fewer primes than ints. – 
+Victor Eijkhout CommentedNov 21, 2023 at 17:03 
+
+https://osiris.df.unipi.it/vecchiosito/cdc/portland/pgiws_ug/pgi32u12.htm
+
+11 OpenMP Parallelization Pragmas for C and C++
+
