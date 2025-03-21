@@ -6,3 +6,21 @@ Legge la UV, solo un oggetto singolo, non una scena
 Se la UV manca, l'output è inesistente ma viene comunque prodotto
 Solo tris, no quads
 
+-----
+
+Windows
+
+C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx64\x64\cl.exe  /nologo /TP  -I..\ultimaille -I..\ultimaille\ext /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O2 /Ob2 /DNDEBUG /W4 -openmp -std:c++17 /showIncludes /FoCMakeFiles\stiffening2d.dir\stiffening2d.cpp.obj /FdCMakeFiles\stiffening2d.dir\ /FS -c ..\stiffening2d.cpp
+cl : Command line warning D9025 : overriding '/W3' with '/W4'
+..\stiffening2d.cpp(79): error C3036: 'max': invalid operator token in OpenMP 'reduction' clause
+..\stiffening2d.cpp(106): error C3030: 'F': variable in 'reduction' clause/directive cannot have reference type
+ninja: build stopped: subcommand failed.
+
+https://stackoverflow.com/questions/58449246/why-does-visual-studio-2019-not-support-the-keyword-max-in-for-reduction-of-op
+
+6
+
+MSVC compiler is stuck with OpenMP version 2.0, and unfortunately for you, reduction(max:) was only introduced with version 3.1 of the OpenMP C/C++ standard (that was in September 2011)
+
+So you can either change of compiler, or doing the reduction operation the old way with some private variables and a final reduction with critical accumulations
+

@@ -32,6 +32,6 @@ endif()
 add_executable(stiffening2d stiffening2d.cpp)
 target_link_libraries(stiffening2d ultimaille)
 
-add_executable(stiffening3d stiffening3d.cpp)
-target_link_libraries(stiffening3d ultimaille)
+# add_executable(stiffening3d stiffening3d.cpp)
+# target_link_libraries(stiffening3d ultimaille)
 
