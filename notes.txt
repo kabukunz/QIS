@@ -33,3 +33,6 @@ https://osiris.df.unipi.it/vecchiosito/cdc/portland/pgiws_ug/pgi32u12.htm
 
 11 OpenMP Parallelization Pragmas for C and C++
 
+-----
+
+aggiunta compilazione con clang-cl su windows, funziona

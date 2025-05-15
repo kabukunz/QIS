@@ -1,0 +1,18 @@
+echo OFF
+
+set MMG_BUILD_DIR=build
+set MMG_BUILD_TYPE=Release
+
+@REM clean
+del /Q /F %MMG_BUILD_DIR% 
+del /Q /F %MMG_INSTALL_DIR%
+
+@REM build
+cmake -B %MMG_BUILD_DIR% -G Ninja ^
+-DCMAKE_WINDOWS_EXPORT_ALL_SYMBOLS=TRUE ^
+-DCMAKE_BUILD_TYPE=%MMG_BUILD_TYPE% ^
+-DCMAKE_CXX_COMPILER=clang-cl ^
+-DCMAKE_C_COMPILER=clang-cl
+
+@REM compile
+cmake --build %MMG_BUILD_DIR%
