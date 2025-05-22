@@ -25,6 +25,7 @@ int main(int argc, char **argv)
     constexpr double bfgs_threshold = 1e-8;
     // constexpr double outer_threshold = 1e-3;
     constexpr double outer_threshold = 1e-4;
+    // constexpr double outer_threshold = 1e-5;
     constexpr bool lock_boundary = false;
     // const std::string res_filename = "result.obj";
 

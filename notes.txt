@@ -36,3 +36,14 @@ https://osiris.df.unipi.it/vecchiosito/cdc/portland/pgiws_ug/pgi32u12.htm
 -----
 
 aggiunta compilazione con clang-cl su windows, funziona
+
+-----
+
+fatti i test su 
+
+horseshoe2-flatpatch-scaf.obj
+slimclip1_scaf_q2t.obj
+
+outer_threshold = 1e-4;
+
+una sola iterazione, perfetti. velocissimo
