@@ -47,3 +47,25 @@ slimclip1_scaf_q2t.obj
 outer_threshold = 1e-4;
 
 una sola iterazione, perfetti. velocissimo
+
+-----
+
+hilbert1_numerical-fallback-mmg.obj
+
+C:\Users\kabukunz\Developer\Library\QIS>c:\Users\kabukunz\Developer\Library\QIS\build\stiffening2d.exe c:\Users\kabukunz\Developer\Library\QIS\hilbert1_numerical-fallback-mmg.obj
+Stiffening c:\Users\kabukunz\Developer\Library\QIS\hilbert1_numerical-fallback-mmg.obj, nverts: 18424,  max distortion: 422.934
+Outer iteration #0
+(f^k - f^{k+1})/max{|f^k|,|f^{k+1}|,1} <= 1e-08
+E: 7900.14 --> 8.94709, t: 0.00212799, max distortion: 1.01997
+Outer iteration #1
+(f^k - f^{k+1})/max{|f^k|,|f^{k+1}|,1} <= 1e-08
+E: 436.604 --> 432.25, t: 0.979317, max distortion: 1.00183
+Outer iteration #2
+(f^k - f^{k+1})/max{|f^k|,|f^{k+1}|,1} <= 1e-08
+E: 475.682 --> 475.681, t: 0.981202, max distortion: 1.00177
+Running time: 77.9925 seconds
+writing file: hilbert1_numerical-fallback-mmg_qis.obj
+
+l'unwrap è parziale
+
+pare che solo LSCM riesca a fare sta cazzo di curva di hilbert...
